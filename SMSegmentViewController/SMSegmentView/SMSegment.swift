@@ -114,9 +114,9 @@ open class SMSegment: UIView {
     
     private func configureBadge() {
         badge.insets = CGSize(width: 5, height: 5)
-        badge.textColor = .black
+        badge.textColor = self.badgeTextColor
         badge.font = UIFont.systemFont(ofSize: 12)
-        badge.badgeColor = .red
+        badge.badgeColor = self.badgeColor
     }
     
     private func positionBadgeToImage() {

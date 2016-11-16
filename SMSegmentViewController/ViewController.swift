@@ -37,6 +37,9 @@ class ViewController: UIViewController {
         self.segmentView = SMSegmentView(frame: segmentFrame, dividerColour: UIColor(white: 0.95, alpha: 0.3), dividerWidth: 1.0, segmentAppearance: appearance)
         self.segmentView.backgroundColor = UIColor.clear
         
+        self.segmentView.segmentBadgeColor = .blue
+        self.segmentView.segmentBadgeTextColor = .white
+        
         self.segmentView.layer.cornerRadius = 5.0
         self.segmentView.layer.borderColor = UIColor(white: 0.85, alpha: 1.0).cgColor
         self.segmentView.layer.borderWidth = 1.0
