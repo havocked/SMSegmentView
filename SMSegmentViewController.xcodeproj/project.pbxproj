@@ -31,6 +31,9 @@
 		6957D72E1A5A997A007AC81B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6957D72D1A5A997A007AC81B /* Images.xcassets */; };
 		6957D7311A5A997A007AC81B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6957D72F1A5A997A007AC81B /* LaunchScreen.xib */; };
 		6957D73D1A5A997A007AC81B /* SMSegmentViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6957D73C1A5A997A007AC81B /* SMSegmentViewControllerTests.swift */; };
+		838D2BDD1DDCB9DB006C2C7D /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D2BDC1DDCB9DB006C2C7D /* BadgeSwift.swift */; };
+		838D2BDE1DDCB9DB006C2C7D /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D2BDC1DDCB9DB006C2C7D /* BadgeSwift.swift */; };
+		838D2BDF1DDCB9DB006C2C7D /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D2BDC1DDCB9DB006C2C7D /* BadgeSwift.swift */; };
 		C19594531BD91785008D80C0 /* SMSegmentView.h in Headers */ = {isa = PBXBuildFile; fileRef = C19594521BD91785008D80C0 /* SMSegmentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C19594581BD917ED008D80C0 /* SMSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346DF371A619FC200DEFA20 /* SMSegmentView.swift */; };
 		C19594591BD917ED008D80C0 /* SMSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346DF361A619FC200DEFA20 /* SMSegment.swift */; };
@@ -73,6 +76,7 @@
 		6957D7361A5A997A007AC81B /* SMSegmentViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMSegmentViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6957D73B1A5A997A007AC81B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6957D73C1A5A997A007AC81B /* SMSegmentViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSegmentViewControllerTests.swift; sourceTree = "<group>"; };
+		838D2BDC1DDCB9DB006C2C7D /* BadgeSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSwift.swift; sourceTree = "<group>"; };
 		C19594501BD91785008D80C0 /* SMSegmentView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SMSegmentView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19594521BD91785008D80C0 /* SMSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMSegmentView.h; sourceTree = "<group>"; };
 		C19594541BD91785008D80C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				2315A3D51D46A0A300F0F9CD /* SMSegmentViewConstants.swift */,
 				2346DF371A619FC200DEFA20 /* SMSegmentView.swift */,
 				2346DF361A619FC200DEFA20 /* SMSegment.swift */,
+				838D2BDC1DDCB9DB006C2C7D /* BadgeSwift.swift */,
 			);
 			path = SMSegmentView;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				TargetAttributes = {
 					6957D7201A5A997A007AC81B = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 5H3Q87NGJC;
 						LastSwiftMigration = 0800;
 					};
 					6957D7351A5A997A007AC81B = {
@@ -365,6 +371,7 @@
 				2315A3D81D46A0A300F0F9CD /* SMSegmentViewConstants.swift in Sources */,
 				6957D7271A5A997A007AC81B /* AppDelegate.swift in Sources */,
 				2315A3D61D46A0A300F0F9CD /* SMSegmentAppearance.swift in Sources */,
+				838D2BDD1DDCB9DB006C2C7D /* BadgeSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6957D73D1A5A997A007AC81B /* SMSegmentViewControllerTests.swift in Sources */,
+				838D2BDE1DDCB9DB006C2C7D /* BadgeSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C19594581BD917ED008D80C0 /* SMSegmentView.swift in Sources */,
+				838D2BDF1DDCB9DB006C2C7D /* BadgeSwift.swift in Sources */,
 				C19594591BD917ED008D80C0 /* SMSegment.swift in Sources */,
 				2315A3D91D46A0A300F0F9CD /* SMSegmentViewConstants.swift in Sources */,
 				2315A3D71D46A0A300F0F9CD /* SMSegmentAppearance.swift in Sources */,
@@ -508,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5H3Q87NGJC;
 				INFOPLIST_FILE = SMSegmentViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -521,6 +531,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5H3Q87NGJC;
 				INFOPLIST_FILE = SMSegmentViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

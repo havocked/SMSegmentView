@@ -27,6 +27,46 @@ open class SMSegment: UIView {
     open var onSelectionImage: UIImage?
     open var offSelectionImage: UIImage?
     
+    // Badge
+    private var badge = BadgeSwift()
+    
+    public var badgeTextColor: UIColor = .black {
+        didSet {
+            self.badge.textColor = self.badgeTextColor
+        }
+    }
+    
+    public var badgeColor: UIColor = .red {
+        didSet {
+            self.badge.badgeColor = self.badgeColor
+        }
+    }
+    
+    ///If setting this text not empty nor nil, it will automatically re-enable badge (hidden = false)
+    public var badgeText: String? = "" {
+        didSet {
+            
+            guard let text = badgeText else {
+                self.badgeEnabled = false
+                return
+            }
+            
+            if text.isEmpty {
+                self.badgeEnabled = false
+                return
+            }
+            self.badgeEnabled = true
+            self.badge.text = badgeText
+            self.layoutIfNeeded()
+        }
+    }
+    
+    public var badgeEnabled: Bool = false {
+        didSet {
+            self.badge.isHidden = !self.badgeEnabled
+        }
+    }
+    
     // Appearance
     open var appearance: SMSegmentAppearance?
     
@@ -66,9 +106,28 @@ open class SMSegment: UIView {
                 self.label.textColor = appearance.titleOffSelectionColour
             }
             self.imageView.image = self.offSelectionImage
+            
+            self.configureBadge()
+            self.positionBadgeToImage()
         })
     }
     
+    private func configureBadge() {
+        badge.insets = CGSize(width: 5, height: 5)
+        badge.textColor = .black
+        badge.font = UIFont.systemFont(ofSize: 12)
+        badge.badgeColor = .red
+    }
+    
+    private func positionBadgeToImage() {
+        label.addSubview(badge)
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        var constraints = [NSLayoutConstraint]()
+        constraints.append(NSLayoutConstraint(item: badge, attribute: .left, relatedBy: .equal, toItem: label, attribute: .right, multiplier: 1.0, constant: 3))
+        constraints.append(NSLayoutConstraint(item: badge, attribute: .centerY, relatedBy: .equal, toItem: label, attribute: .top, multiplier: 1.0, constant: 0))
+        constraints.append(NSLayoutConstraint(item: badge, attribute: .height, relatedBy: .equal, toItem: label, attribute: .height, multiplier: 0.8, constant: 0))
+        self.addConstraints(constraints)
+    }
     
     // MARK: Update label and imageView frame
     open override func layoutSubviews() {

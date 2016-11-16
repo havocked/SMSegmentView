@@ -55,6 +55,22 @@ open class SMSegmentView: UIControl {
             return segments.count
         }
     }
+    
+    public var segmentBadgeTextColor: UIColor = .black {
+        didSet {
+            for segment in self.segments {
+                segment.badgeTextColor = self.segmentBadgeTextColor
+            }
+        }
+    }
+    
+    public var segmentBadgeColor: UIColor = .black {
+        didSet {
+            for segment in self.segments {
+                segment.badgeColor = self.segmentBadgeColor
+            }
+        }
+    }
 
     fileprivate var segments: [SMSegment] = []
     fileprivate var selectedSegment: SMSegment?
@@ -101,11 +117,11 @@ open class SMSegmentView: UIControl {
     }
 
     // MARK: Add Segment
-    open func addSegmentWithTitle(_ title: String?, onSelectionImage: UIImage?, offSelectionImage: UIImage?) {
-        self.insertSegmentWithTitle(title, onSelectionImage: onSelectionImage, offSelectionImage: offSelectionImage, index: self.segments.count)
+    open func addSegmentWithTitle(_ title: String?, onSelectionImage: UIImage?, offSelectionImage: UIImage?, badgeText: String) {
+        self.insertSegmentWithTitle(title, onSelectionImage: onSelectionImage, offSelectionImage: offSelectionImage, index: self.segments.count, badgeText: badgeText)
     }
 
-    open func insertSegmentWithTitle(_ title: String?, onSelectionImage: UIImage?, offSelectionImage: UIImage?, index: Int) {
+    open func insertSegmentWithTitle(_ title: String?, onSelectionImage: UIImage?, offSelectionImage: UIImage?, index: Int,badgeText: String) {
 
         let segment = SMSegment(appearance: self.segmentAppearance)
 
@@ -119,6 +135,10 @@ open class SMSegmentView: UIControl {
                 self!.selectSegment(segment)
             }
         }
+        segment.badgeColor = segmentBadgeColor
+        segment.badgeTextColor = segmentBadgeTextColor
+        segment.badgeText = badgeText
+        
         segment.setupUIElements()
         
         self.resetSegmentIndicesWithIndex(index, by: 1)
@@ -139,6 +159,17 @@ open class SMSegmentView: UIControl {
         let segment = self.segments.remove(at: index)
         segment.removeFromSuperview()
         self.updateSegmentsLayout()
+    }
+    
+    ///If badge is empty string, will not show badge
+    public func badgeText(text: String?, forSegmentIndex: Int) {
+        let segment = self.segments[forSegmentIndex]
+        segment.badgeText = text
+    }
+    
+    public func enableBadge(enable: Bool, forSegmentIndex: Int) {
+        let segment = self.segments[forSegmentIndex]
+        segment.badgeEnabled = enable
     }
     
     fileprivate func resetSegmentIndicesWithIndex(_ index: Int, by: Int) {
