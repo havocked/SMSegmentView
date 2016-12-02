@@ -71,6 +71,14 @@ open class SMSegmentView: UIControl {
             }
         }
     }
+    
+    public var segmentImageColor: UIColor = .blue {
+        didSet {
+            for segment in self.segments {
+                segment.imageColor = self.self.segmentImageColor
+            }
+        }
+    }
 
     fileprivate var segments: [SMSegment] = []
     fileprivate var selectedSegment: SMSegment?

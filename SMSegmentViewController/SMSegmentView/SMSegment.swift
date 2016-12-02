@@ -42,6 +42,12 @@ open class SMSegment: UIView {
         }
     }
     
+    public var imageColor: UIColor = .blue {
+        didSet {
+            self.imageView.tintColor = self.imageColor
+        }
+    }
+    
     ///If setting this text not empty nor nil, it will automatically re-enable badge (hidden = false)
     public var badgeText: String? = "" {
         didSet {
