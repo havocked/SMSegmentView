@@ -145,6 +145,7 @@ open class SMSegmentView: UIControl {
         }
         segment.badgeColor = segmentBadgeColor
         segment.badgeTextColor = segmentBadgeTextColor
+        segment.imageColor = segmentImageColor
         segment.badgeText = badgeText
         
         segment.setupUIElements()
